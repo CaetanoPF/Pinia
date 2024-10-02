@@ -10,5 +10,14 @@ export const useProductStore = defineStore('product', () => {
     { id: 5, name: 'Trento', price: 3, qty: 80 }
   ])
 
-  return { products }
+  function setProductById(id) {
+    // for (let product of products.value) {
+    //   if (product.id === id) {
+    //     return product
+    //   }
+    // }
+    // return {}
+    return products.value.find((product) => product.id == id)
+  }
+  return { products, getProductById }
 })
